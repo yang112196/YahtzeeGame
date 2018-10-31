@@ -1,7 +1,4 @@
 sceneSetups:
-- path: Assets/Simple UI/Samples/SettingsWindow.unity
-  isLoaded: 0
-  isActive: 0
-- path: Assets/Scenes/01_Menu.unity
+- path: Assets/Scenes/RoomScene.unity
   isLoaded: 1
   isActive: 1
