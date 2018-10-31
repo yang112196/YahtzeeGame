@@ -6,22 +6,25 @@ public class PlayerController : MonoBehaviour {
     public Rigidbody rb;
     Vector3 movement;
     Animator anim;
-
+    public float moveSpeed = 1f;
+    public float rotationRate;
     // Use this for initialization
     void Start () {
         rb = GetComponent<Rigidbody>();
 
         anim = GetComponent<Animator>();
+
+        rotationRate = 360;  
     }
 	
 	// Update is called once per frame
 	void Update () {
-        float h = Input.GetAxis("Horizontal");
-        float v = Input.GetAxis("Vertical");
-        transform.Translate(0f,0f,h);
-        transform.Rotate(0f,v,0f);
+        float turn = Input.GetAxis("Horizontal");
+        float move = Input.GetAxis("Vertical");
+        Move(move);
+        Turn(turn);
 
-        if(h != 0){
+        if(move != 0){
             anim.SetBool("IsWalking", true);
         }
         else{
@@ -29,5 +32,16 @@ public class PlayerController : MonoBehaviour {
         }
     }
 
-    
+    private void Move(float input)
+    {
+        transform.Translate(Vector3.forward * input * moveSpeed);
+        //rb.AddForce(transform.forward * input * moveSpeed, ForceMode.Force);
+       
+    }
+
+    private void Turn(float input){
+        transform.Rotate(0, input * rotationRate * Time.deltaTime, 0);
+    }
+
+
 }
