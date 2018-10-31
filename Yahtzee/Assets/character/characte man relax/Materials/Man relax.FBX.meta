@@ -175,7 +175,7 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
+    importAnimatedCustomProperties: 1
     importConstraints: 0
     animationCompression: 3
     animationRotationError: 0.5
@@ -951,11 +951,11 @@ ModelImporter:
       name: Idel
       takeName: 'Character _Man Relax '
       firstFrame: 0
-      lastFrame: 2
+      lastFrame: 4
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
-      cycleOffset: 0
+      cycleOffset: 5
       loop: 0
       hasAdditiveReferencePose: 0
       loopTime: 1

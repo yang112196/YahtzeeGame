@@ -15,27 +15,19 @@ public class PlayerController : MonoBehaviour {
     }
 	
 	// Update is called once per frame
-	void FicedUpdate () {
+	void Update () {
         float h = Input.GetAxis("Horizontal");
         float v = Input.GetAxis("Vertical");
-        Move(h, v);
-        rb.AddForce(movement);
-        Animating(h, v);
+        transform.Translate(0f,0f,h);
+        transform.Rotate(0f,v,0f);
+
+        if(h != 0){
+            anim.SetBool("IsWalking", true);
+        }
+        else{
+            anim.SetBool("IsWalking", false);
+        }
     }
 
-    void Move(float h, float v)
-    {
-        movement.Set(h, 0f, v);
-
-        movement = movement.normalized * 6f * Time.deltaTime;
-
-        rb.MovePosition(transform.position + movement);
-    }
-
-    void Animating(float h, float v)
-    {
-        bool walking = (h != 0) || (v != 0);
-        anim.SetBool("IsWalking", walking);
-
-    }
+    
 }
