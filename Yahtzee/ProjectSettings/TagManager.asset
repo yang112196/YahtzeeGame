@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Dice
+  - P
   layers:
   - Default
   - TransparentFX
